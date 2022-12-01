@@ -1,0 +1,625 @@
+.gameOver{
+    height: 1000px;
+    display: none;
+    background-image: url(imgs/loan-shark-and-a-poor-man-vector.jpg);
+    background-size: contain;
+    
+}
+
+#overText {
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: black;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 2px white;
+}
+
+.main {
+    display: grid;
+    background-image: url(imgs/360_F_508770027_BKBg5dJgrEEuuM6BhOQUeTntitTygUbz.jpg);
+    background-size: stretch;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.right {
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+        "displayWin displayWin displayWin listTitle"
+        "roulette roulette roulette listTitle";
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 10% 90%;
+}
+
+.left {
+    display: grid;
+    justify-content: end;
+}
+.gameboard {
+    display: grid;
+    height: auto;
+    width: 900px;
+    justify-content: end;
+    grid-template-areas:
+
+        "A1-2-3 . A4-5-6 . A7-8-9 . A10-11-12 . A13-14-15 . A16-17-18 ."
+        "A1 A1-4 A4 A4-7 A7 A7-10 A10 A10-13 A13 A13-16 A16 A1-4-7-10-13-16"
+        "A1-2 A1-2-4-5 A4-5 A4-5-7-8 A7-8 A7-8-10-11 A10-11 A10-11-13-14 A13-14 A13-14-16-17 A16-17 ."
+        "A2 A2-5 A5 A5-8 A8 A8-11 A11 A11-14 A14 A14-17 A17 A2-5-8-11-14-17"
+        "A2-3 A2-3-5-6 A5-6 A5-6-8-9 A8-9 A8-9-11-12 A11-12 A11-12-14-15 A14-15 A14-15-17-18 A17-18 ."
+        "A3 A3-6 A6 A6-9 A9 A9-12 A12 A12-15 A15 A15-18 A18 A3-6-9-12-15-18"
+        "A1-2-3-4-5-6 A1-2-3-4-5-6 A1-2-3-4-5-6 A1-2-3-4-5-6 A7-8-9-10-11-12 A7-8-9-10-11-12 A7-8-9-10-11-12 A7-8-9-10-11-12 A13-14-15-16-17-18 A13-14-15-16-17-18 A13-14-15-16-17-18 A13-14-15-16-17-18 "
+        "A1-2-3-4-5-6-7-8-9 A1-2-3-4-5-6-7-8-9 A2-4-6-8-10-12-14-16-18 A2-4-6-8-10-12-14-16-18 A1-3-5-7-9-12-14-16-18 A1-3-5-7-9-12-14-16-18 A2-4-6-8-10-11-13-15-17 A2-4-6-8-10-11-13-15-17 A1-3-7-9-12-15-17 A1-3-7-9-12-15-17 A11-12-13-14-15-16-17-18 A11-12-13-14-15-16-17-18";
+
+    grid-template-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 50px;
+    grid-template-rows: 20px 1fr 20px 1fr 20px 1fr 1fr 1fr;
+}
+
+.restart{
+    background-image: url(imgs/unmountable-boot-volume.png);
+}
+
+.roulette {
+    grid-area: roulette;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 500px;
+    color: gold;
+    background-image: url(imgs/golden-casino-background-with-card-suit-symbols_1017-32736.jpg.webp);
+    background-size: cover;
+    background-position: top;
+    height: auto;
+    text-shadow: 10px 10px 5px yellow, 0 0 20px white, 0 0 30px gold, 0 0 50px white;
+}
+
+.displayWin {
+    grid-area: displayWin;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 50px;
+    color: gold;
+    text-shadow: 2px 2px 1px yellow;
+}
+
+.listTitle {
+    grid-area: listTitle;
+    font-size: 50px;
+    justify-content: center;
+    color: gold;
+    text-shadow: 2px 2px 1px yellow;
+}
+
+.rouletteNumbers {
+    color: cyan;
+}
+
+.interaction {
+    display: grid;
+    grid-template-areas: 
+    "startButton playTotal playTotal pay pay twoButton"
+    "startButton playerTotal playerTotal payout payout fiveButton"
+    "resetButton playerTotal playerTotal payout payout tenButton"
+    "resetButton playerTotal playerTotal payout payout tenButton";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+#playTotal{
+    grid-area: playTotal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: gold;
+    font-size: 20px;
+    text-shadow: 1px 1px  yellow;
+}
+
+#pay {
+    grid-area: pay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: gold;
+    font-size: 20px;
+    text-shadow: 1px 1px  yellow;
+}
+
+.startButton {
+    grid-area: startButton;
+    color: white;
+    font-size: 50px;
+    background-color: green;
+    border: 20px;
+    padding: 20px 20px;
+    text-shadow: 2px 2px  black;
+    color: goldenrod
+}
+
+.resetButton {
+    grid-area: resetButton;
+    font-size: 20px;
+    background-color: red;
+    padding: 20px 20px;
+    text-shadow: 1px 1px;
+}
+
+.betButton {
+    padding: 20px 20px;
+    background-color: gold;
+    font-size: 40px;
+    text-shadow: 1px 1px  black;
+    color:  darkred;
+    
+}
+
+#twoButton {
+    grid-area: twoButton
+}
+
+#fiveButton {
+    grid-area: fiveButton
+}
+
+#tenButton {
+    grid-area: tenButton
+}
+
+.playerTotal {
+    grid-area: playerTotal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: gold;
+    font-size: 50px;
+    text-shadow: 2px 2px  yellow;
+}
+
+.payout {
+    grid-area: payout;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: gold;
+    font-size: 50px;
+    text-shadow: 2px 2px  yellow;
+}
+
+.showBets{
+    list-style-type: none;
+}
+
+.gameEl {
+    width: auto;
+    height: auto;
+    border: 5px solid gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    text-shadow: 3px 3px 2px  yellow;
+    color: goldenrod;
+}
+
+.inBetween {
+    width: auto;
+    height: auto;
+    opacity: 0.1;
+}
+
+.inBetween:hover {
+    opacity: 1;
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    text-shadow: 3px 3px 2px  yellow;
+    color: goldenrod;
+
+}
+
+.crossSection {
+    width: auto;
+    height: auto;
+    opacity: 0.1;
+}
+
+.crossSection:hover {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    text-shadow: 3px 3px 2px  yellow;
+    color: goldenrod;
+}
+
+.sideBet {
+    width: auto;
+    height: auto;
+    opacity: 0.1;
+}
+
+.sideBet:hover {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    text-shadow: 3px 3px 2px  yellow;
+    color: goldenrod;
+}
+
+.columnNum {
+    width: 100px;
+    height: 100px;
+    border: 5px solid green;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color: gold;
+    background-color: lightyellow;
+    text-shadow: 3px 3px 2px  yellow;
+}
+
+.midSection {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    border: 10px;
+    color: darkgoldenrod;
+    text-shadow: 3px 3px 2px  yellow;
+}
+
+.rightSection {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    color: darkgoldenrod;
+    text-shadow: 3px 3px 2px  yellow;
+}
+
+.leftSection {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    color: darkgoldenrod;
+    text-shadow: 3px 3px 2px  yellow;
+}
+
+
+.leftHalf {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    color: darkgoldenrod;
+    text-shadow: 3px 3px 2px  yellow;
+}
+
+.rightHalf {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightgoldenrodyellow;
+    color: darkgoldenrod;
+    text-shadow: 3px 3px 2px  yellow;
+}
+
+.even {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightyellow;
+    color: darkgoldenrod;
+    text-shadow: 3px 3px 2px  yellow;
+}
+
+.odd {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: lightyellow;
+    color: darkgoldenrod;
+    text-shadow: 3px 3px 2px  yellow;
+}
+.red {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: red;
+    background-color: darkred;
+    text-shadow: 3px 3px 2px  red;
+}
+
+.black {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: black;
+    background-color: darkgray;
+    text-shadow: 3px 3px 2px  black;
+}
+
+#A1 {
+    grid-area: A1;
+    border: 5px solid red;
+}
+#A2 {
+    grid-area: A2;
+    border: 5px solid darkgray;
+}
+#A3 {
+    grid-area: A3;
+    border: 5px solid red;
+}
+#A4 {
+    grid-area: A4;
+    border: 5px solid darkgray;
+}
+#A5 {
+    grid-area: A5;
+    border: 5px solid red;
+}
+#A6 {
+    grid-area: A6;
+    border: 5px solid darkgray;
+}
+#A7 {
+    grid-area: A7;
+    border: 5px solid red;
+}
+#A8 {
+    grid-area: A8;
+    border: 5px solid darkgray;
+}
+#A9 {
+    grid-area: A9;
+    border: 5px solid red;
+}
+#A10 {
+    grid-area: A10;
+    border: 5px solid darkgray;
+}
+#A11 {
+    grid-area: A11;
+    border: 5px solid darkgray;
+}
+#A12 {
+    grid-area: A12;
+    border: 5px solid red;
+}
+#A13 {
+    grid-area: A13;
+    border: 5px solid darkgray;
+}
+#A14 {
+    grid-area: A14;
+    border: 5px solid red;
+}
+#A15 {
+    grid-area: A15;
+    border: 5px solid darkgray;
+}
+#A16 {
+    grid-area: A16;
+    border: 5px solid red;
+}
+#A17 {
+    grid-area: A17;
+    border: 5px solid darkgray;
+}
+#A18 {
+    grid-area: A18;
+    border: 5px solid red;
+}
+
+#A1-4 {
+    grid-area: A1-4;
+}
+#A2-5 {
+    grid-area: A2-5;
+}
+#A3-6 {
+    grid-area: A3-6;
+}
+#A4-7 {
+    grid-area: A4-7;
+}
+#A5-8 {
+    grid-area: A5-8;
+}
+#A6-9 {
+    grid-area: A6-9;
+}
+#A7-10 {
+    grid-area: A7-10;
+}
+#A8-11 {
+    grid-area: A8-11;
+}
+#A9-12 {
+    grid-area: A9-12;
+}
+#A10-13 {
+    grid-area: A10-13;
+}
+#A11-14 {
+    grid-area: A11-14;
+}
+#A12-15 {
+    grid-area: A12-15;
+}
+#A13-16 {
+    grid-area: A13-16;
+}
+#A14-17 {
+    grid-area: A14-17;
+}
+#A15-18 {
+    grid-area: A15-18;
+}
+#A1-2 {
+    grid-area: A1-2;
+}
+#A2-3 {
+    grid-area: A2-3;
+}
+#A4-5 {
+    grid-area: A4-5;
+}
+#A5-6 {
+    grid-area: A5-6;
+}
+#A7-8 {
+    grid-area: A7-8;
+}
+#A8-9 {
+    grid-area: A8-9;
+}
+#A10-11 {
+    grid-area: A10-11;
+}
+#A11-12 {
+    grid-area: A11-12;
+}
+#A13-14 {
+    grid-area: A13-14;
+}
+#A14-15 {
+    grid-area: A14-15;
+}
+#A16-17 {
+    grid-area: A16-17;
+}
+#A17-18 {
+    grid-area: A17-18;
+}
+#A1-2-4-5 {
+    grid-area: A1-2-4-5;
+}
+#A2-3-5-6 {
+    grid-area: A2-3-5-6;
+}
+#A4-5-7-8 {
+    grid-area: A4-5-7-8;
+}
+#A5-6-8-9 {
+    grid-area: A5-6-8-9;
+}
+#A7-8-10-11 {
+    grid-area: A7-8-10-11;
+}
+#A8-9-11-12 {
+    grid-area: A8-9-11-12;
+}
+#A10-11-13-14 {
+    grid-area: A10-11-13-14;
+}
+#A11-12-14-15 {
+    grid-area: A11-12-14-15;
+}
+#A13-14-16-17 {
+    grid-area: A13-14-16-17;
+}
+#A14-15-17-18 {
+    grid-area: A14-15-17-18;
+}
+#A1-2-3 {
+    grid-area: A1-2-3;
+}
+#A4-5-6 {
+    grid-area: A4-5-6;
+}
+#A7-8-9 {
+    grid-area: A7-8-9;
+}
+#A10-11-12 {
+    grid-area: A10-11-12;
+}
+#A13-14-15 {
+    grid-area: A13-14-15;
+}
+#A16-17-18 {
+    grid-area: A16-17-18;
+}
+#A1-4-7-10-13-16 {
+    grid-area: A1-4-7-10-13-16;
+}
+#A2-5-8-11-14-17 {
+    grid-area: A2-5-8-11-14-17;
+}
+#A3-6-9-12-15-18 {
+    grid-area: A3-6-9-12-15-18;
+}
+#A1-2-3-4-5-6 {
+    grid-area: A1-2-3-4-5-6;
+}
+#A7-8-9-10-11-12 {
+    grid-area: A7-8-9-10-11-12;
+}
+#A13-14-15-16-17-18 {
+    grid-area: A13-14-15-16-17-18;
+}
+#A1-2-3-4-5-6-7-8-9 {
+    grid-area: A1-2-3-4-5-6-7-8-9;
+}
+#A11-12-13-14-15-16-17-18 {
+    grid-area: A11-12-13-14-15-16-17-18;
+}
+#A2-4-6-8-10-12-14-16-18 {
+    grid-area: A2-4-6-8-10-12-14-16-18;
+}
+#A1-3-7-9-12-15-17 {
+    grid-area: A1-3-7-9-12-15-17;
+}
+#A1-3-5-7-9-12-14-16-18 {
+    grid-area: A1-3-5-7-9-12-14-16-18;
+}
+#A2-4-6-8-10-11-13-15-17 {
+    grid-area: A2-4-6-8-10-11-13-15-17;
+}

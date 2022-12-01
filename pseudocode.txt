@@ -1,0 +1,111 @@
+1) Define required constants:
+	1.1)The numbers 1-18
+    1.2)The board betting options.
+        1.2.1) In between 2 numbers.
+        1.2.2) Betting between 4 numbers.
+        1.2.3) Betting on all numbers in a column.
+        1.2.4) Betting on all numbers in a row.
+        1.2.5) Option to bet on all number 1-6,6-12,12-18 respectively.
+        1.2.6) Option to bet on only half of the numbers 1-9, 9-18 respectively.
+        1.2.7) Option to bet on colors red or black.
+        1.2.8) Option to bet on even or odd colors.
+    1.3)The betting chip amounts 100, 500, 1000
+    1.4)Start button and Reset Button display
+    1.5)Display of the board
+    1.6)The display of the wheel.
+
+2) Define required variables used to track the state of the game:
+	2.1) Player has chosen the chip amount
+    2.2) Player has begun putting chips on the table
+    2.3) Player has pressed the start button
+    2.4) Animation phase where wheel is spinning
+    2.5) Payout phase where player total is calculated
+    2.6) Check if win/lose conditions are valid
+
+
+3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant:
+	3.1) Store the 9 elements that represent the squares on the page.
+
+4) Upon loading the app should:
+	4.1) Initialize the state variables:
+        4.1.1) Init the board elements
+            4.1.1.1) The bottom container which has the player amount, chip selection options, start button, reset button
+                4.1.1.1.1) Player amount is preset to a specified amount
+            4.1.1.2)Top right container which holds the game board
+                4.1.1.2.1) 1-18 elements
+                4.1.1.2.2) All the betting option elements
+            4.1.1.3)Top left container which holds the wheel
+                4.1.1.3.1) Winning Number and Winning Amount text set to default values
+    4.2) Wait for player to choose a chip amount and starting placing bets on the table
+        4.2.1) Chip amount default is set to 100
+
+5.) Picking chip amount and placing bets:
+    5.1) Chip chosen amount is stored in variable, default is 100
+    5.2) Placing a bet on a number, increments the value that is stored in array.
+        5.2.1) Multiple increments on a number will increase said value
+        5.2.2) Multiple different numbers can be incremented and will increase value in said array
+        5.2.3) ODDS ARE 18 to 1
+    5.3) A bet on In Between (IB) will increase the adjacent two numbers in the corresponding array
+        5.3.1)ODDS are 9 to 1
+    5.4) A bet on Cross Between (CS) will increase 4 numbers that share the same corner
+        5.4.1)ODDS are 4.5 to 1
+    5.5) A bet on Street Bet (SB) will increase the numbers in the correspoing column
+        5.5.1)ODDS are 6 to 1
+    5.6) A bet on 1C,2C,3C will increase the corresponding numbers in the columns
+        5.6.1)ODDS are 3 to 1
+    5.7) A bet on 1-5, 6-11, 12-18, will increase the numbers accordingly in the array
+        5.7.1)ODDS are 3 to 1
+    5.8) A bet on Even/Odd will increase the numbers accordingly in the array
+        5.8.1)ODDS are 2 to 1
+    5.9) A bet on RED/BLACK will increase the numbers accordingly
+        5.9.1)ODDS are 2 to 1
+    6.0)At the end of the betting period, the bet numbers are stored, any non number bets are modifiers which will be calculated after the number is chosen and added on.
+
+6.)When player finishes placing bets and presses start
+    6.1)Function to choose one number out of 18 is chosen.
+    6.2)Spinning animation is shown before landing on chosen number
+        6.3)A static? time function to flash the circles in a clockwise order
+        6.4) At the end of the timer, the chosen number is flashed
+
+7.)How payout is calculated
+    7.1)Chosen number is searched for in the array.
+    7.2)Single number payout is calculated and added to payout variable
+    7.3)non single number payments are calculated and added to payout variable
+    7.4)Winning number and winning amount is displayed
+
+8.)Reset button
+    8.1) Removes all chips from the board
+    8.2) Resets all winning text displays
+
+
+Logs
+
+1) Attempt to use Class, create a empty object with all the modifiers associated with the number
+    10.1)Constrcutor will create a object based on the number and all the modifiers that are valid will be passed
+    10.2)Object number will be created and stored in an array among all the other number bets that are created
+    10.3) when betting is finished and chosen number is picked.  Array of betting numbers objects will be searched for chosen number.
+        10.3.1)The array of clicked objects that are stored in array will be searched by the ONE associated single number, since every object will reference at least one num.
+    10.4) That number and all its associated modifiers are calculated towards a winning payout
+
+2)
+    1.)seperate numbers and modifiers by creating a class/ID to seperate numbesr payout types to send in the different according class
+    2.)each method calculates the total number accordingly and returns payout to the single array
+        2.1)Instead add odds in the method and perhaps add to variable afterwards
+    3.) Attempt to store objects first then calculate payout after
+    4.)To calculate payout, first we to iterate through the storage of arrays, and find the correspond numbers and pass them through another class to filter out and calculate payouts into another variable to store.
+        4.1) Lets assume every chip is 100
+        4.2) Each modifier and Number would have a chosen number associated with it, so loop oever each object.
+        4.3)If the object has a winnign number in any of its modifiers, then it's corresponding key value pair is passed onto a class to calculate its payout.
+            4.3.1)Pushing the singluar key/value pairs through the class array, which has one input and multuple methods, methods will check matching string values of the key value, before adding calculating
+            4.3.2) One object is created for One chip 
+            4.3.3)Amended where if winning number is found then proceed to iterate until bet amt is found
+            4.3.4)need to code to split strings into single numbers for more than one digit in num property
+        4.4)Ideally to deal with array block numbers, we need to convert it into string, by accessing each key value pair.
+            4.4.1)Create a new array to store modifiers and pass them thoruhg number check sperately
+            4.5)Object create does not have class name needed for other block code, need to use class constructor
+                4.5.1)Object crte first htne into a class contructor
+                4.5.2)Re-arranged the code in elimDupe to make it work
+    5.)Working on CSS and adding interactiion to browser
+     5.1) added buttons and money displays
+     5.2) added display text to never go below zero, will add losing condition later.
+     

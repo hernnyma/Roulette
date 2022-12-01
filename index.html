@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script defer src=main.js></script>
+    <title>Document</title>
+</head>
+<body class="">
+    <div class="gameOver">
+        <div id="overText">Gambling eh?</div>
+    </div>
+    <div class="main">
+        <div class="right">
+            <h1 class="displayWin">Winning Number! <p id="winningNum"></p></h1>
+            <h2 class="listTitle">Bets:<ul class="showBets"></ul></h2>
+            <div class="roulette"></div>
+        </div>
+
+        <div class="left">
+            <div class="gameboard">
+                <div class="gameEl"id="A1">1</div>
+                <div class="gameEl"id="A2">2</div>
+                <div class="gameEl"id="A3">3</div>
+                <div class="gameEl"id="A4">4</div>
+                <div class="gameEl"id="A5">5</div>
+                <div class="gameEl"id="A6">6</div>
+                <div class="gameEl"id="A7">7</div>
+                <div class="gameEl"id="A8">8</div>
+                <div class="gameEl"id="A9">9</div>
+                <div class="gameEl"id="A10">10</div>
+                <div class="gameEl"id="A11">11</div>
+                <div class="gameEl"id="A12">12</div>
+                <div class="gameEl"id="A13">13</div>
+                <div class="gameEl"id="A14">14</div>
+                <div class="gameEl"id="A15">15</div>
+                <div class="gameEl"id="A16">16</div>
+                <div class="gameEl"id="A17">17</div>
+                <div class="gameEl"id="A18">18</div>
+                <div class="inBetween" id="A1-4">1,4</div>
+                <div class="inBetween" id="A2-5">2,5</div>
+                <div class="inBetween" id="A3-6">3,6</div>
+                <div class="inBetween" id="A4-7">4,7</div>
+                <div class="inBetween" id="A5-8">5,8</div>
+                <div class="inBetween" id="A6-9">6,9</div>
+                <div class="inBetween" id="A7-10">7,10</div>
+                <div class="inBetween" id="A8-11">8,11</div>
+                <div class="inBetween" id="A9-12">9,12</div>
+                <div class="inBetween" id="A10-13">10,13</div>
+                <div class="inBetween" id="A11-14">11,14</div>
+                <div class="inBetween" id="A12-15">12,15</div>
+                <div class="inBetween" id="A13-16">13,16</div>
+                <div class="inBetween" id="A14-17">14,17</div>
+                <div class="inBetween" id="A15-18">15,18</div>
+                <div class="inBetween" id="A1-2">1,2</div>
+                <div class="inBetween" id="A2-3">2,3</div>
+                <div class="inBetween" id="A4-5">4,5</div>
+                <div class="inBetween" id="A5-6">5,6</div>
+                <div class="inBetween" id="A7-8">7,8</div>
+                <div class="inBetween" id="A8-9">8,9</div>
+                <div class="inBetween" id="A10-11">10,11</div>
+                <div class="inBetween" id="A11-12">11,12</div>
+                <div class="inBetween" id="A13-14">13,14</div>
+                <div class="inBetween" id="A14-15">14,15</div>
+                <div class="inBetween" id="A16-17">16,17</div>
+                <div class="inBetween" id="A17-18">17,18</div>
+                <div class="crossSection" id="A1-2-4-5">1,2,4,5</div>
+                <div class="crossSection" id="A2-3-5-6">2-3-5-6</div>
+                <div class="crossSection" id="A4-5-7-8">4-5-7-8</div>
+                <div class="crossSection" id="A5-6-8-9">5-6-8-9</div>
+                <div class="crossSection" id="A7-8-10-11">7-8-10-11</div>
+                <div class="crossSection" id="A8-9-11-12">8-9-11-12</div>
+                <div class="crossSection" id="A10-11-13-14">10-11-13-14</div>
+                <div class="crossSection" id="A11-12-14-15">11-12-14-15</div>
+                <div class="crossSection" id="A13-14-16-17">13-14-16-17</div>
+                <div class="crossSection" id="A14-15-17-18">14-15-17-18</div>
+                <div class="sideBet" id="A1-2-3">1-3</div>
+                <div class="sideBet" id="A4-5-6">4-6</div>
+                <div class="sideBet" id="A7-8-9">7-9</div>
+                <div class="sideBet" id="A10-11-12">10-12</div>
+                <div class="sideBet" id="A13-14-15">13-15</div>
+                <div class="sideBet" id="A16-17-18">16-18</div>
+                <div class="columnNum" id="A1-4-7-10-13-16">1C</div>
+                <div class="columnNum" id="A2-5-8-11-14-17">2C</div>
+                <div class="columnNum" id="A3-6-9-12-15-18">3C</div>
+                <div class="leftSection" id="A1-2-3-4-5-6">1-6</div>
+                <div class="midSection" id="A7-8-9-10-11-12">7-12</div>
+                <div class="rightSection" id="A13-14-15-16-17-18">13-18</div>
+                <div class="leftHalf" id="A1-2-3-4-5-6-7-8-9">1-9</div>
+                <div class="rightHalf" id="A11-12-13-14-15-16-17-18">10-18</div>
+                <div class="even" id="A2-4-6-8-10-12-14-16-18">Even</div>
+                <div class="odd" id="A1-3-7-9-12-15-17">Odd</div>
+                <div class="red" id="A1-3-5-7-9-12-14-16-18">Red</div>
+                <div class="black" id="A2-4-6-8-10-11-13-15-17">Black</div>
+            </div>
+
+            <div class="interaction">
+                <button class="startButton">Roll</button>
+                <button class="resetButton">Reset Board each turn</button>
+                <button class="betButton" id="twoButton">200</button>
+                <button class="betButton" id="fiveButton">500</button>
+                <button class="betButton" id="tenButton">1000</button>
+                <button class="betButton" id="cheat">Cheat</button>
+                <h1 class="playerTotal">1000</h1>
+                <h2 class="payout">20</h2>
+                <h3 class="heading" id="playTotal">Player Total</h3>
+                <h4 class="heading" id="pay">Payout</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
