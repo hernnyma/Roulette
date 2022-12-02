@@ -8,9 +8,7 @@ This game mimics orginal roulette with nearly all the orginal betting patterns. 
 
 ## Screenshots
 ---
-![RouletteGold](https://git.generalassemb.ly/hernma/roulette/blob/main/imgs/gameUI.png)
-![RouletteGold](https://git.generalassemb.ly/hernma/roulette/blob/main/imgs/WireFrameFigma.png)
-
+![RouletteGold](https://github.com/hernnyma/Roulette/blob/main/imgs/gameUI.png)
 
 ## Technologies Used:
 ---
